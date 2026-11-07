@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader
 from PIL import Image
 from models.generator import Generator
 from models.discriminator import Discriminator
-from losses.losses import ContentLoss, AdversarialLoss, SSIMLoss, PerceptualLoss
+from losses.losses import ContentLoss, AdversarialLoss, PerceptualLoss
 from data.dataloader import PairedCTDataset, transform
 from engine.training import train, load_checkpoint
 
@@ -33,7 +33,6 @@ if __name__ == "__main__":
     # Losses
     criterion_content = ContentLoss()
     criterion_adv = AdversarialLoss()
-    criterion_ssim = SSIMLoss()
     criterion_perceptual = PerceptualLoss()
 
     # Dataset paths
@@ -51,7 +50,7 @@ if __name__ == "__main__":
     train(generator, discriminator, dataloader, num_epochs=50,
         optimizer_G=optimizer_G, optimizer_D=optimizer_D,
         criterion_content=criterion_content, criterion_adv=criterion_adv,
-        criterion_ssim=criterion_ssim, criterion_perceptual=criterion_perceptual,
+        criterion_perceptual=criterion_perceptual,
         device=device, sample_ldct_img=sample_ldct_img, sample_hdct_img=sample_hdct_img,
         patience=50, start_epoch=start_epoch)
 

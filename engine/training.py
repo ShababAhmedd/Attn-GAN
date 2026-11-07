@@ -67,7 +67,7 @@ def load_checkpoint(generator, optimizer_G, discriminator, optimizer_D, filename
 
 
 def train(generator, discriminator, dataloader, num_epochs, optimizer_G, optimizer_D,
-          criterion_content, criterion_adv, criterion_ssim, criterion_perceptual, device,
+          criterion_content, criterion_adv, criterion_perceptual, device,
           sample_ldct_img, sample_hdct_img,
           patience=5, start_epoch=0):
 
@@ -95,7 +95,6 @@ def train(generator, discriminator, dataloader, num_epochs, optimizer_G, optimiz
             sr_image = generator(low_img)
 
             content_loss = criterion_content(sr_image, high_img)
-            # ssim_loss = criterion_ssim(sr_image, high_img)
             sr_pred = discriminator(sr_image)
             # adv_loss = criterion_adv(sr_pred, torch.ones_like(sr_pred))
             real_labels = torch.empty_like(sr_pred).uniform_(0.8, 1.0)  # Label smoothing for real

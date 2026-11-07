@@ -22,14 +22,6 @@ class AdversarialLoss(nn.Module):
         return self.loss(pred, target)
 
 
-# class SSIMLoss(nn.Module):
-#     def __init__(self):
-#         super(SSIMLoss, self).__init__()
-
-#     def forward(self, sr, hr):
-#         return 1 - F.mse_loss(sr, hr)  # Approximate SSIM loss
-
-
 class PerceptualLoss(nn.Module):
     def __init__(self):
         super(PerceptualLoss, self).__init__()
