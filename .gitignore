@@ -1,0 +1,6 @@
+# Unzipped PyTorch checkpoint (duplicate of last_checkpoint.pth)
+last_checkpoint/
+
+# Python
+__pycache__/
+*.pyc
