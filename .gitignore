@@ -4,3 +4,9 @@ last_checkpoint/
 # Python
 __pycache__/
 *.pyc
+
+# Dataset (not uploaded)
+dataset/
+
+# Partial browser downloads
+*.crdownload
