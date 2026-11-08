@@ -12,3 +12,6 @@ kaggle_notebook/
 
 # Partial browser downloads
 *.crdownload
+
+# classification
+kaggle_run1/
